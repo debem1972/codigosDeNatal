@@ -1,0 +1,613 @@
+@charset "UTF-8";
+/*Importando as fontes*/
+@font-face {
+  font-family: "natalina";
+  src: url("../fontes/playful_christmas/Playful Christmas-Personal Use.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+/*--------------------------------------------------------------------*/
+/*Reset da página*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*-----------------------------------------------------------------*/
+body {
+  /*border: 3px solid $sangue;*/
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/*------------------------------------------------------------*/
+/*Estilizações da abertura*/
+/*O fundo de entrada*/
+/*estilização inicial do fundo*/
+.fundo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/imgFrente.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-color: green;
+}
+
+/*Estilização recebida após o clique no body*/
+.efeitoFundo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  animation: fundo-vermelho 14s linear 2s;
+  overflow: hidden;
+}
+
+/*-----------------------------------------------------------------*/
+/*O programa*/
+/*Classe inicial da div do programa*/
+#miolo {
+  /*border: 3px solid $verdeClaro;*/
+  width: 100%;
+  height: 100vh;
+}
+
+.envelope {
+  display: none;
+}
+
+/*Classe recebida após o clique do body*/
+.conteudo {
+  /*border: 3px solid $sangue;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  flex-wrap: wrap;
+  background-image: url("../img/natalHouse.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-color: green;
+  position: absolute;
+}
+
+/*---------------------------------------------------------------------*/
+/* Estilizando a ajuda*/
+.ocultaIframe {
+  display: none;
+}
+
+.iframe {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(230, 225, 225);
+  width: 60%;
+  height: 10vh;
+  box-shadow: 3px 3px 8px grey;
+  z-index: 3;
+  position: absolute;
+  top: 20vh;
+  transition: all 0.8s ease-in-out;
+}
+
+/*Classe recebida após clicar em um dos botões*/
+.iframeAjuda {
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(230, 225, 225);
+  width: 300px;
+  height: 600px;
+  margin: 3rem auto;
+  box-shadow: 3px 3px 8px grey;
+  z-index: 3;
+  transition: all 0.8s ease-in-out;
+}
+
+/*-----------------------------------------------------------*/
+/*Div dos botoes*/
+.botoes {
+  /*border: 1px solid $folha;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 40px;
+  margin: 20px auto;
+}
+
+/*------------------------------------------------------------*/
+/* Estilizando os botoes de ajuda*/
+#helpBr,
+#helpEng {
+  background-color: #bb1a14;
+  color: #fff;
+  width: 40%;
+  height: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #6d0c09;
+  transition: box-shadow 0.3s;
+}
+
+#helpBr:active {
+  box-shadow: inset 2px 2px 3px #6d0c09;
+}
+
+#helpEng:active {
+  box-shadow: inset 2px 2px 3px #6d0c09;
+}
+
+/*--------------------------------------------------------------------*/
+/*Estilizando as div's de ajuda*/
+.ajuda {
+  display: none;
+}
+
+.ajudaEmPtBr {
+  /*border: 2px solid $folha;*/
+  border-radius: 5px;
+  background-color: whitesmoke;
+  width: 90%;
+  height: 80%;
+  margin: 20px auto;
+  overflow-y: auto;
+  box-shadow: 2px 2px 3px black, -1px -1px 2px black;
+}
+
+/*Escondendo a barra do scroll*/
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.ajudaEmEng {
+  border-radius: 5px;
+  background-color: whitesmoke;
+  width: 90%;
+  height: 80%;
+  margin: 20px auto;
+  overflow-y: auto;
+  box-shadow: 2px 2px 3px black, -1px -1px 2px black;
+}
+
+/*-------------------------------------------------*/
+/*Estilizando a dic dos audios*/
+.audioAjuda {
+  /*border: 2px solid $sangue;*/
+  border-radius: 30px;
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
+  box-shadow: 2px 2px 3px black, -1px -1px 2px black;
+}
+
+audio {
+  width: 100%;
+  height: 50px;
+}
+
+/*----------------------------------------------------*/
+/*Estilização da div dos textos*/
+.lerAjudaEmPtBr,
+.lerAjudaEmEng {
+  /*border: 1px solid $azulao;*/
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  width: 90%;
+  height: 100%;
+  margin: 20px auto;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  box-shadow: 2px 2px 3px black, -1px -1px 2px black;
+  transition: all 0.2s ease-in-out;
+  z-index: 4;
+}
+
+.lerAjudaEmPtBr:hover {
+  transform: scale(1.1);
+  background-color: white;
+  position: absolute;
+  width: 60%;
+  height: auto;
+  z-index: 5;
+}
+
+.lerAjudaEmEng:hover {
+  transform: scale(1.1);
+  background-color: white;
+  position: absolute;
+  width: 60%;
+  height: auto;
+  z-index: 5;
+}
+
+/*--------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+/*Envolucro do programa*/
+.programa {
+  position: absolute;
+  width: 95%;
+  height: 100vh;
+  z-index: 2;
+}
+
+/*-----------------------------------------------------------------*/
+/*A imagem*/
+/*Classe inicial da imagem*/
+.imagemNoel {
+  display: none;
+}
+
+/*Classe recebida após o clique no body*/
+.splash {
+  border-radius: 50%;
+  visibility: hidden;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: efeitoImg 14s ease-in-out 1s;
+}
+
+#text1 {
+  font-family: "natalina";
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Animação do primeiro texto*/
+.palavras {
+  display: none;
+}
+
+/*Classe recebida após o clique no body*/
+.textEfect {
+  visibility: hidden;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: efeitoTexto1 15s ease-in-out 2s;
+}
+
+.palavras2 {
+  display: none;
+}
+
+.textEfect2 {
+  visibility: hidden;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: efeitoTexto2 16s ease-in-out 3s;
+}
+
+/*Animação do #fundo*/
+@keyframes fundo-vermelho {
+  0% {
+    background-color: #fff;
+  }
+  25% {
+    background-color: #bb1a14;
+  }
+  55% {
+    background-color: #bb1a14;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+/*Animação da imagem*/
+@keyframes efeitoImg {
+  0% {
+    transform: scale(0.01, 0.01);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/*Animação do primeiro texto*/
+@keyframes efeitoTexto1 {
+  0% {
+    transform: scale(0.01, 0.01);
+    opacity: 0;
+  }
+  10% {
+    transform: scale(0.1, 0.1);
+    opacity: 0.1;
+  }
+  20% {
+    transform: scale(0.2, 0.2);
+    opacity: 0.2;
+  }
+  90% {
+    transform: scale(1, 1);
+    opacity: 1;
+    visibility: visible;
+    color: whitesmoke;
+    font-size: 4.5rem;
+    text-shadow: 2px 2px 3px black;
+  }
+  95% {
+    transform: scale(1, 1);
+    opacity: 0.2;
+    visibility: visible;
+    color: whitesmoke;
+    font-size: 3rem;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: -3px;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+    visibility: visible;
+    color: whitesmoke;
+    font-size: 3rem;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: 0;
+  }
+}
+/*Animação do segundo texto*/
+@keyframes efeitoTexto2 {
+  0% {
+    transform: scale(0.01, 0.01);
+    opacity: 0;
+  }
+  10% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(0.2, 0.2);
+    opacity: 0.1;
+  }
+  90% {
+    transform: scale(1, 1);
+    opacity: 0.2;
+    visibility: visible;
+    color: whitesmoke;
+    font-size: 3rem;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: -2px;
+  }
+  95% {
+    transform: scale(1, 1);
+    opacity: 1;
+    visibility: visible;
+    color: whitesmoke;
+    font-size: 3rem;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+    visibility: visible;
+    color: #325f29;
+    font-size: 7rem;
+    text-shadow: 3px 3px 4px black;
+    letter-spacing: 0;
+  }
+}
+/*--------------------------------------------------------------------*/
+/*Estilizações do programa*/
+.container {
+  /*border: 2px solid $pinkPanter;*/
+  margin: auto auto;
+  width: 95%;
+}
+
+.titulo {
+  /*border: 1px solid $azulao;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#callHelp {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mdi-help-circle:hover {
+  color: #bb1a14;
+}
+
+#callHelp:active {
+  transform: scale(0.8);
+  text-shadow: 2px 2px 2px black;
+  transition: all 0.2s ease;
+}
+
+.entrada {
+  /*border: 1px dashed $sangue;*/
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.entrada h3 {
+  padding-top: 10px;
+}
+
+#presenteado {
+  width: 200px;
+}
+
+#geraCode,
+#cadastra {
+  height: 30px;
+}
+
+#geraCode {
+  width: 97px;
+  background-color: #bb1a14;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 3px grey;
+  cursor: pointer;
+}
+
+#btn-add {
+  width: 86px;
+  height: 30px;
+  background-color: #bb1a14;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 3px grey;
+  cursor: pointer;
+}
+
+#presenteado,
+#code {
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 3px grey;
+  outline: none;
+}
+
+#code {
+  font-weight: bold;
+}
+
+.content {
+  /*border: 2px solid $azulao;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h3 {
+  text-align: center;
+  padding-top: 10px;
+  margin: 10px;
+}
+
+.item {
+  display: flex;
+  border: 1px solid black;
+  width: 60%;
+  padding: 5px;
+  margin-top: 4px;
+  margin-left: 25px;
+  text-shadow: 2px 2px 3px whitesmoke;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 2px 2px 3px grey;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.item.clicado {
+  background-color: #d4f6d9;
+}
+
+.item.clicado .item-icone.checked {
+  color: green;
+}
+
+.mdi-check-circle {
+  color: green;
+}
+
+.item.clicado .item-nome {
+  text-decoration: line-through;
+  color: rgb(174, 170, 170);
+}
+
+.editar,
+.deletar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.9s ease;
+  font-size: 1.2rem;
+}
+
+.editar:active {
+  transform: scale(0.7);
+}
+
+.deletar:active {
+  transform: scale(0.7);
+}
+
+.lixeira {
+  color: red;
+}
+
+/*Responsividade*/
+@media screen and (max-width: 768px) {
+  .item {
+    width: 90%;
+    margin: auto auto;
+    margin-top: 3px;
+  }
+}
+@media screen and (max-width: 325px) {
+  #code,
+  #btn-add {
+    margin-top: 2px;
+  }
+}
+/*Responsividade da ajuda*/
+/* Adicionando media queries para diferentes tamanhos de tela */
+@media screen and (max-width: 768px) {
+  .iframeAjuda {
+    width: 60%;
+    height: 80%;
+  }
+  .ajudaEmPtBr,
+  .ajudaEmEng {
+    height: 72%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .lerAjudaEmPtBr:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    background-color: white;
+    position: absolute;
+    width: 300px;
+    height: 40vh;
+    left: 42%;
+    z-index: 5;
+  }
+  .lerAjudaEmEng:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    background-color: white;
+    position: absolute;
+    width: 300px;
+    height: 40vh;
+    left: 42%;
+    z-index: 5;
+  }
+}/*# sourceMappingURL=styles.css.map */
