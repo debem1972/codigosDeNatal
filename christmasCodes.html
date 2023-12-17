@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.3.67/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Códigos de Natal</title>
+</head>
+
+<body>
+    <div id="fundo" class="fundo">
+        <audio id="sinos" preload="auto">
+            <source src="./songs/712654__audiocoffee__happy-mood-short-version-_AudioTrimmer.com_.mp3"
+                type="audio/mpeg">
+        </audio>
+        <img src="./img/noelApavorado.jpeg" alt="abertura" id="splash" class="imagemNoel">
+        <p id="text1" class="palavras">Códigos de Natal</p>
+        <p id="text2" class="palavras2">y8K3m2c</p>
+    </div>
+    <div id="miolo" class="envelope">
+        <div id="iframe" class="ocultaIframe">
+            <div class="botoes">
+                <button id="helpBr" class="botoesFixos" onclick="helpBr()">Ajuda</button>
+                <button id="helpEng" class="botoesFixos" onclick="helpEng()">Help</button>
+            </div>
+            <div id="ajudeMe" class="ajuda">
+                <div class="audioAjuda">
+                    <audio controls controlsList="nodownload">
+                        <source src="./songs/ajudaPt-br.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <article id="lerAjudaEmPtBr" class="lerAjudaEmPtBr">
+                    <p>Este aplicativo web, irá te ajudar a colocar um código no pacote do presente, e colocá-lo sob a
+                        árvore
+                        de Natal, sem que ninguém saiba a quem pertence àquele pacote até a noite de Natal, exceto
+                        você é
+                        claro, garantindo aquela expectativa e aguçando a curiosidade de todos em sua casa.
+                        Basta clicar em gerar código, depois, cadastrar o nome da pessoa que irá receber o presente.
+                        Anote
+                        o
+                        código gerado no respectivo pacote, e está feito. Na noite de Natal, abra sua lista, e revele
+                        então
+                        os
+                        nomes dos presenteados.
+                        Após inserir o primeiro item na lista, o programa solicitará a geração de uma senha de 4
+                        dígitos,
+                        para
+                        evitar os curiosos! Cada vez que for abrir o programa, esta senha será cobrada! Não a esqueça!!!
+                        Tenham todos um Feliz Natal!!!
+                    </p>
+                </article>
+            </div>
+            <div id="helpMe" class="ajuda">
+                <div class="audioAjuda">
+                    <audio controls controlsList="nodownload">
+                        <source src="./songs/helpInEnglish.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <article id="lerAjudaEmEng" class="lerAjudaEmEng">
+                    <p>This web application will help you put a code on the gift package, and place it under the
+                        Christmas
+                        tree, without anyone knowing who that package belongs to, until Christmas Eve, except you, of
+                        course, ensuring that expectation and piquing the curiosity of everyone in your home.
+                        Just click on generate code, then register the name of the person who will receive the gift.
+                        Write
+                        down the generated code in the respective package, and you're done. On Christmas Eve, open your
+                        list
+                        and reveal the names of those gifted.
+                        After inserting the first item in the list, the program will ask you to generate a 4-digit
+                        password,
+                        to avoid curious people! Every time you open the program, this password will be charged! Don't
+                        forget her!!!
+                        Have a Merry Christmas everyone!!!</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="programa">
+            <section class="container">
+                <header class="titulo">
+                    <h1>Códigos de Natal</h1>
+                    <button id="callHelp" onclick="chamaBotoes()"><i class="mdi mdi-help-circle"></i></button>
+                </header>
+                <article class="entrada">
+                    <button id="geraCode" onclick="geraCodigo()">Gerar código</button>
+                    <input id="code" type="text">
+                    <h3>Cadastrar felizardo</h3>
+                    <input id="presenteado" type="text" placeholder="Nome para cadastrar...">
+                    <button id="btn-add" onclick="addTarefa()">Cadastrar</button>
+                </article>
+                <main class="content" id="areaLista">
+                    <h3>Lista de presentes</h3>
+                    <!--<div class="item">
+                        <div onclick="marcarTarefa(${contador})" class="item-icone">
+                            <i class="mdi mdi-circle-outline"></i>
+                        </div>
+                        <div onclick="marcarTarefa(${contador})" class="item-nome">
+                            <p id="nomePresenteado">Laloka</p>
+                        </div>
+                        <div onclick="marcarTarefa(${contador})" class="item-code">
+                            <p id="codigoPresente">j5B9u3</p>
+                        </div>
+                        <div class="item-botao">
+                            <button class="editar"><span class="mdi mdi-pencil"></span></button>
+                        </div>
+                        <div class="item-botao ">
+                            <button class="deletar lixeira"><span class="mdi mdi-delete-outline"></span></button>
+                        </div>
+                    </div>
+                    <div class="item clicado">
+                        <div onclick="marcarTarefa(${contador})" class="item-icone checked">
+                            <i class="mdi mdi-check-circle"></i>
+                        </div>
+                        <div onclick="marcarTarefa(${contador})" class="item-nome">
+                            <p id="nomePresenteado">Laloka</p>
+                        </div>
+                        <div onclick="marcarTarefa(${contador})" class="item-code item-nome">
+                            <p id="codigoPresente">j5B9u3</p>
+                        </div>
+        
+                        <div class="item-botao">
+                            <button class="editar"><span class="mdi mdi-pencil"></span></button>
+                        </div>
+                        <div class="item-botao">
+                            <button class="deletar lixeira"><span class="mdi mdi-delete-outline"></span></button>
+                        </div>
+                    </div>-->
+                </main>
+            </section>
+        </div>
+    </div>
+    <script src="./js/tocandoAudio.js"></script>
+    <script src="./js/index6.js"></script>
+    <script src="./js/ajudaVictor.js"></script>
+
+</body>
+
+</html>
