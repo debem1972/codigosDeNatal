@@ -7,6 +7,7 @@ var nomePresenteado = document.getElementById('presenteado');
 let btnAdd = document.getElementById('btn-add');
 let main = document.getElementById('areaLista');
 let botaoGeraCodigo = document.getElementById('geraCode');
+
 function geraCodigo() {
     const caracteres = "abcdefghijklmnopqrstuvxywzABCDEFGHIJKLMNOPQRSTUVXYWZ0123456789";
     const length = 6;
@@ -64,7 +65,7 @@ function addTarefa() {
 
 // Criar uma função que solicita ao usuário que digite uma senha de acesso de 4 dígitos e valida se ela é válida
 function solicitarSenha() {
-    let senha = prompt("Digite uma senha de acesso de 4 dígitos:");
+    let senha = prompt("Digite uma senha de acesso de 4 números:");
     if (senha == null || senha.length != 4 || isNaN(senha)) {
         alert("Senha inválida. Tente novamente.");
         solicitarSenha();
