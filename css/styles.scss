@@ -1,14 +1,17 @@
-@import"./-variaveis.scss";
-
 /*Importando as fontes*/
 @font-face {
     font-family: "natalina";
-    src: url("../fontes/playful_christmas/Playful Christmas-Personal Use.otf") format("opentype");
+    src: url("../fontes/ChristmasCarol_PERSONAL_USE_ONLY.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
 
 /*--------------------------------------------------------------------*/
+
+
+@import"./-variaveis.scss";
+
+
 
 /*Reset da página*/
 * {
@@ -302,6 +305,7 @@ audio {
     font-family: "natalina";
     font-weight: normal;
     font-style: normal;
+    letter-spacing: 1px;
 }
 
 /*Animação do primeiro texto*/

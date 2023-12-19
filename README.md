@@ -12,7 +12,7 @@ Créditos:
 #Minha imensa gratidão a Design Raquel Quadros,  que gentilmente cedeu sua consultoria técnica de forma gratuita na realização deste projeto didático;
 
 Tecnologias utilizadas na criação:
-#html, css, scss, javaScript, git e gitHub;
+#html, css, scss, javaScript, git e gitHub, responsividade;
 
 Este projeto é totalmente gratuito e possui o intuito totalmente didático, não podendo ser comercializado de nenhuma forma!
 
